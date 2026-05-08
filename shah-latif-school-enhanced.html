@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shah Latif Public Secondary School | Jacobabad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Nastaliq+Urdu:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    :root{
+      --green:    #1B4332;
+      --green2:   #2D6A4F;
+      --green3:   #40916C;
+      --gold:     #C9A84C;
+      --gold2:    #E2C97E;
+      --cream:    #FAF6EE;
+      --cream2:   #F0E8D5;
+      --white:    #FFFFFF;
+      --text:     #1B2A1F;
+      --text2:    #4A6741;
+      --border:   rgba(201,168,76,0.2);
+      --red:      #C0392B;
+    }
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
+    a{text-decoration:none;color:inherit;}
+    ::-webkit-scrollbar{width:5px;}
+    ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px;}
+
+    /* ── TOP BAR ── */
+    .top-bar{background:var(--green);padding:8px 48px;display:flex;align-items:center;justify-content:space-between;font-size:12px;color:rgba(255,255,255,0.7);}
+    .top-bar a{color:var(--gold2);margin-left:16px;}
+    .top-bar-urdu{font-family:'Noto Nastaliq Urdu',serif;font-size:13px;color:var(--gold2);}
+
+    /* ── NAV ── */
+    nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:3px solid var(--gold);padding:0 48px;box-shadow:0 2px 12px rgba(0,0,0,0.08);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:80px;max-width:1200px;margin:0 auto;}
+    .nav-brand{display:flex;align-items:center;gap:16px;}
+    .nav-logo{width:56px;height:56px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--gold);flex-shrink:0;}
+    .nav-logo svg{width:28px;height:28px;fill:var(--gold);}
+    .nav-brand-text h1{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--green);line-height:1.2;}
+    .nav-brand-text p{font-size:10px;color:var(--text2);letter-spacing:2px;text-transform:uppercase;}
+    .nav-links{display:flex;gap:28px;list-style:none;}
+    .nav-links a{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text);transition:color 0.2s;}
+    .nav-links a:hover{color:var(--green2);}
+    .nav-cta{padding:10px 22px;background:var(--green);color:var(--white);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;border-radius:2px;transition:all 0.2s;cursor:pointer;border:none;}
+    .nav-cta:hover{background:var(--green2);transform:translateY(-1px);}
+
+    /* ── HERO ── */
+    #hero{min-height:92vh;background:linear-gradient(135deg,var(--green) 0%,var(--green2) 50%,#1e5c3a 100%);display:flex;align-items:center;position:relative;overflow:hidden;}
+    .hero-pattern{position:absolute;inset:0;background-image:radial-gradient(circle at 70% 30%,rgba(201,168,76,0.08) 0%,transparent 50%),radial-gradient(circle at 20% 80%,rgba(201,168,76,0.05) 0%,transparent 40%);}
+    .hero-geo{position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:500px;height:500px;border:1px solid rgba(201,168,76,0.1);border-radius:50%;}
+    .hero-geo::before{content:'';position:absolute;inset:50px;border:1px solid rgba(201,168,76,0.08);border-radius:50%;}
+    .hero-geo::after{content:'';position:absolute;inset:100px;border:1px solid rgba(201,168,76,0.06);border-radius:50%;}
+    .hero-inner{max-width:1200px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;width:100%;}
+    .hero-badge{display:inline-flex;align-items:center;gap:10px;padding:6px 16px;border:1px solid rgba(201,168,76,0.4);border-radius:20px;background:rgba(201,168,76,0.08);margin-bottom:24px;}
+    .hero-badge span{font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold2);}
+    .est-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;}
+    .hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5vw,4rem);color:var(--white);line-height:1.1;margin-bottom:8px;}
+    .hero-title span{color:var(--gold);font-style:italic;}
+    .hero-urdu{font-family:'Noto Nastaliq Urdu',serif;font-size:1.8rem;color:var(--gold2);direction:rtl;margin-bottom:20px;line-height:1.6;}
+    .hero-desc{font-size:1rem;color:rgba(255,255,255,0.65);line-height:1.85;max-width:500px;margin-bottom:36px;font-weight:300;}
+    .hero-stats{display:flex;gap:32px;margin-bottom:36px;flex-wrap:wrap;}
+    .h-stat{text-align:center;}
+    .h-stat-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);line-height:1;}
+    .h-stat-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:3px;}
+    .hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+    .btn-gold{display:inline-block;padding:13px 30px;background:var(--gold);color:var(--green);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:2px;transition:all 0.25s;cursor:pointer;border:none;}
+    .btn-gold:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 20px rgba(201,168,76,0.3);}
+    .btn-ghost{display:inline-block;padding:13px 30px;background:transparent;color:var(--white);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;border:1px solid rgba(255,255,255,0.3);border-radius:2px;transition:all 0.25s;}
+    .btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+    .hero-card{background:rgba(255,255,255,0.06);border:1px solid rgba(201,168,76,0.2);border-radius:8px;padding:32px;backdrop-filter:blur(10px);}
+    .hero-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--gold2);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(201,168,76,0.2);}
+    .hero-card-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;}
+    .hero-card-icon{width:36px;height:36px;flex-shrink:0;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.2);border-radius:3px;display:flex;align-items:center;justify-content:center;}
+    .hero-card-icon svg{width:16px;height:16px;fill:var(--gold);}
+    .hero-card-label{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);}
+    .hero-card-value{font-size:13px;font-weight:500;color:var(--white);}
+
+    /* ── SECTIONS ── */
+    #poet{background:var(--white);}
+    .section{padding:90px 0;}
+    .s-inner{max-width:1200px;margin:0 auto;padding:0 48px;}
+    .s-eyebrow{font-size:10px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+    .s-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);color:var(--green);margin-bottom:14px;line-height:1.2;}
+    .s-title span{color:var(--green2);font-style:italic;}
+    .s-divider{width:48px;height:2px;background:var(--gold);margin-bottom:40px;}
+
+    .poet-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:60px;align-items:center;}
+    .poet-img{width:100%;aspect-ratio:3/4;border-radius:6px;overflow:hidden;background:linear-gradient(145deg,var(--green),var(--green2));position:relative;display:flex;align-items:center;justify-content:center;}
+    .poet-img-inner{text-align:center;color:rgba(255,255,255,0.2);}
+    .poet-img-inner svg{width:80px;height:80px;fill:rgba(201,168,76,0.3);margin-bottom:12px;}
+    .poet-img-inner p{font-size:11px;letter-spacing:2px;}
+    .poet-quote{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,var(--green) 0%,transparent 100%);padding:24px 20px 20px;}
+    .poet-quote p{font-family:'Playfair Display',serif;font-size:0.9rem;color:var(--gold2);font-style:italic;line-height:1.6;}
+    .poet-dob{position:absolute;top:16px;right:16px;background:var(--gold);color:var(--green);padding:8px 14px;border-radius:2px;text-align:center;}
+    .poet-dob .year{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;display:block;line-height:1;}
+    .poet-dob .lbl{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+    .poet-text p{font-size:15px;color:#3D5A4A;margin-bottom:14px;line-height:1.85;font-weight:300;}
+    .poet-facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px;}
+    .fact-item{padding:12px 16px;background:var(--cream);border-left:3px solid var(--gold);border-radius:0 3px 3px 0;}
+    .fact-label{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text2);margin-bottom:3px;}
+    .fact-value{font-size:13px;font-weight:600;color:var(--green);}
+
+    #about{background:var(--cream);}
+    .about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center;}
+    .about-text p{font-size:15px;color:#3D5A4A;margin-bottom:14px;line-height:1.85;font-weight:300;}
+    .features-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px;}
+    .feature-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:16px;display:flex;align-items:center;gap:12px;transition:all 0.2s;}
+    .feature-card:hover{border-color:var(--gold);transform:translateY(-2px);}
+    .feature-card svg{width:20px;height:20px;fill:var(--green2);flex-shrink:0;}
+    .feature-card span{font-size:12px;font-weight:600;color:var(--green);}
+    .about-visual{position:relative;}
+    .about-img{width:100%;aspect-ratio:4/5;border-radius:6px;background:linear-gradient(145deg,var(--green2),var(--green));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+    .about-img-inner{text-align:center;color:rgba(255,255,255,0.15);}
+    .about-img-inner svg{width:80px;height:80px;fill:rgba(255,255,255,0.1);}
+    .about-badge{position:absolute;bottom:-16px;right:-16px;background:var(--gold);color:var(--green);padding:16px 20px;border-radius:3px;border:4px solid var(--cream);text-align:center;}
+    .about-badge .num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;line-height:1;display:block;}
+    .about-badge .lbl{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;}
+
+    #programs{background:var(--white);}
+    .programs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+    .program-card{background:var(--cream);border:1px solid var(--border);border-radius:6px;padding:28px 22px;text-align:center;transition:all 0.25s;position:relative;overflow:hidden;}
+    .program-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);}
+    .program-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(27,67,50,0.1);border-color:var(--gold);}
+    .program-icon{width:56px;height:56px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+    .program-icon svg{width:24px;height:24px;fill:var(--gold);}
+    .program-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--green);margin-bottom:8px;}
+    .program-card p{font-size:12px;color:var(--text2);line-height:1.7;}
+    .program-grade{display:inline-block;margin-top:12px;padding:4px 12px;background:var(--green);color:var(--gold2);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;border-radius:2px;}
+
+    #values{background:var(--green);position:relative;overflow:hidden;}
+    #values::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(201,168,76,0.07) 0%,transparent 60%);}
+    #values .s-title{color:var(--white);}
+    #values .s-eyebrow{color:var(--gold2);}
+    #values .s-divider{background:rgba(201,168,76,0.4);}
+    .values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+    .value-card{background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.15);border-radius:4px;padding:28px 22px;transition:background 0.25s;}
+    .value-card:hover{background:rgba(255,255,255,0.07);}
+    .value-num{font-family:'Playfair Display',serif;font-size:2.5rem;color:rgba(201,168,76,0.15);line-height:1;margin-bottom:10px;}
+    .value-card h3{font-size:0.9rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--white);margin-bottom:10px;}
+    .value-card p{font-size:12px;color:rgba(255,255,255,0.45);line-height:1.8;}
+
+    /* ── ADMISSIONS SECTION ── */
+    #admissions{background:var(--cream2);}
+    .admission-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+    .admission-text p{font-size:15px;color:#3D5A4A;margin-bottom:14px;line-height:1.85;font-weight:300;}
+    .steps-list{margin-top:24px;}
+    .step-item{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px;}
+    .step-num{width:36px;height:36px;flex-shrink:0;background:var(--green);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;}
+    .step-title{font-weight:600;font-size:14px;color:var(--green);margin-bottom:4px;}
+    .step-desc{font-size:12px;color:var(--text2);line-height:1.6;}
+
+    /* Quick enquiry form on the page */
+    .admission-form{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:36px;}
+    .admission-form h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--green);margin-bottom:6px;}
+    .admission-form .form-subtitle{font-size:12px;color:var(--text2);margin-bottom:20px;}
+    .form-group{margin-bottom:16px;}
+    .form-group label{display:block;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text2);margin-bottom:7px;}
+    .form-group input,.form-group select,.form-group textarea{width:100%;padding:11px 14px;font-family:'Inter',sans-serif;font-size:14px;color:var(--text);background:var(--cream);border:1px solid var(--border);border-radius:3px;outline:none;transition:border-color 0.2s;}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--green);background:var(--white);}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+    .btn-submit{width:100%;background:var(--green);color:var(--white);border:none;padding:13px;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:3px;cursor:pointer;transition:background 0.25s;}
+    .btn-submit:hover{background:var(--green2);}
+    .btn-full-form{width:100%;background:transparent;color:var(--green);border:2px solid var(--green);padding:12px;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:3px;cursor:pointer;transition:all 0.25s;margin-top:10px;}
+    .btn-full-form:hover{background:var(--cream);border-color:var(--gold);color:var(--gold);}
+
+    /* ── CONTACT ── */
+    #contact{background:var(--white);}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+    .contact-map{width:100%;height:360px;background:linear-gradient(145deg,var(--cream),var(--cream2));border:1px solid var(--border);border-radius:6px;display:flex;align-items:center;justify-content:center;position:relative;}
+    .map-inner{text-align:center;color:var(--text2);}
+    .map-inner svg{width:48px;height:48px;fill:var(--gold);margin:0 auto 12px;}
+    .map-inner p{font-size:13px;margin-bottom:8px;}
+    .map-inner a{color:var(--green2);font-weight:600;font-size:13px;}
+    .map-pin{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--green);color:var(--white);padding:8px 16px;border-radius:20px;font-size:12px;font-weight:600;white-space:nowrap;box-shadow:0 4px 12px rgba(27,67,50,0.3);}
+    .contact-details h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--green);margin-bottom:8px;}
+    .contact-details p{font-size:14px;color:var(--text2);margin-bottom:24px;line-height:1.7;}
+    .contact-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px;}
+    .contact-ic{width:42px;height:42px;flex-shrink:0;background:var(--green);border-radius:4px;display:flex;align-items:center;justify-content:center;}
+    .contact-ic svg{width:17px;height:17px;fill:var(--gold);}
+    .contact-lbl{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text2);}
+    .contact-val{font-size:14px;font-weight:500;color:var(--green);}
+    .contact-val a{color:var(--green2);}
+
+    /* ── FOOTER ── */
+    footer{background:var(--green);padding:50px 0 24px;}
+    .footer-inner{max-width:1200px;margin:0 auto;padding:0 48px;}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px;}
+    .footer-brand h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--white);margin-bottom:4px;}
+    .footer-brand .urdu{font-family:'Noto Nastaliq Urdu',serif;font-size:1rem;color:var(--gold2);direction:rtl;margin-bottom:12px;}
+    .footer-brand p{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.7;font-weight:300;}
+    .footer-col h4{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+    .footer-col ul{list-style:none;}
+    .footer-col ul li{margin-bottom:10px;}
+    .footer-col ul li a{font-size:13px;color:rgba(255,255,255,0.45);transition:color 0.2s;}
+    .footer-col ul li a:hover{color:var(--gold2);}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+    .footer-copy{font-size:11px;color:rgba(255,255,255,0.3);}
+
+    /* ── REVEAL ── */
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+
+    /* ══════════════════════════════════════════
+       ADMISSION MODAL OVERLAY
+    ══════════════════════════════════════════ */
+    .modal-overlay{
+      position:fixed;inset:0;z-index:1000;
+      background:rgba(10,25,15,0.85);
+      backdrop-filter:blur(6px);
+      display:flex;align-items:flex-start;justify-content:center;
+      padding:20px;overflow-y:auto;
+      opacity:0;pointer-events:none;
+      transition:opacity 0.35s ease;
+    }
+    .modal-overlay.open{opacity:1;pointer-events:all;}
+
+    .modal-box{
+      background:var(--white);
+      border-radius:10px;
+      width:100%;max-width:860px;
+      margin:auto;
+      box-shadow:0 32px 80px rgba(0,0,0,0.5);
+      overflow:hidden;
+      transform:translateY(30px) scale(0.97);
+      transition:transform 0.35s ease;
+    }
+    .modal-overlay.open .modal-box{transform:translateY(0) scale(1);}
+
+    /* Modal Header */
+    .modal-header{
+      background:linear-gradient(135deg,var(--green),var(--green2));
+      padding:36px 40px 28px;
+      position:relative;
+    }
+    .modal-header-top{display:flex;align-items:flex-start;justify-content:space-between;}
+    .modal-school-name{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
+    .modal-logo{width:52px;height:52px;background:rgba(255,255,255,0.1);border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .modal-logo svg{width:24px;height:24px;fill:var(--gold);}
+    .modal-school-name h2{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--white);line-height:1.2;}
+    .modal-school-name p{font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:2px;text-transform:uppercase;}
+    .modal-close{width:38px;height:38px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--white);font-size:18px;flex-shrink:0;transition:background 0.2s;}
+    .modal-close:hover{background:rgba(255,255,255,0.2);}
+    .modal-title-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+    .modal-title-row h3{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);line-height:1;}
+    .modal-title-row .modal-urdu{font-family:'Noto Nastaliq Urdu',serif;font-size:1.2rem;color:rgba(255,255,255,0.5);direction:rtl;}
+    .modal-badge{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);border-radius:20px;margin-top:12px;}
+    .modal-badge span{font-size:11px;color:var(--gold2);letter-spacing:1.5px;font-weight:500;}
+
+    /* Progress Steps */
+    .modal-progress{
+      background:var(--cream);
+      border-bottom:1px solid var(--border);
+      padding:20px 40px;
+      display:flex;align-items:center;justify-content:center;gap:0;
+    }
+    .prog-step{display:flex;align-items:center;gap:0;}
+    .prog-dot{
+      width:36px;height:36px;border-radius:50%;
+      background:var(--cream2);border:2px solid var(--border);
+      display:flex;align-items:center;justify-content:center;
+      font-size:12px;font-weight:700;color:var(--text2);
+      flex-shrink:0;transition:all 0.3s;position:relative;
+    }
+    .prog-dot.active{background:var(--green);border-color:var(--green);color:var(--white);}
+    .prog-dot.done{background:var(--gold);border-color:var(--gold);color:var(--green);}
+    .prog-label{font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text2);margin:0 8px;white-space:nowrap;}
+    .prog-label.active{color:var(--green);}
+    .prog-line{width:40px;height:2px;background:var(--border);}
+    .prog-line.done{background:var(--gold);}
+
+    /* Modal Body */
+    .modal-body{padding:36px 40px;}
+
+    /* Form Steps */
+    .form-step{display:none;}
+    .form-step.active{display:block;}
+    .step-heading{margin-bottom:28px;}
+    .step-heading h4{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--green);margin-bottom:4px;}
+    .step-heading p{font-size:13px;color:var(--text2);}
+
+    /* Form Fields */
+    .mform-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:0;}
+    .mform-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;}
+    .mform-group{margin-bottom:20px;}
+    .mform-group label{display:block;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text2);margin-bottom:8px;}
+    .mform-group label .req{color:var(--red);}
+    .mform-group input,.mform-group select,.mform-group textarea{
+      width:100%;padding:12px 16px;
+      font-family:'Inter',sans-serif;font-size:14px;
+      color:var(--text);background:var(--cream);
+      border:1.5px solid var(--border);border-radius:4px;
+      outline:none;transition:all 0.2s;
+      appearance:none;-webkit-appearance:none;
+    }
+    .mform-group input:focus,.mform-group select:focus,.mform-group textarea:focus{
+      border-color:var(--green);background:var(--white);
+      box-shadow:0 0 0 3px rgba(27,67,50,0.08);
+    }
+    .mform-group select{
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234A6741'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+      background-repeat:no-repeat;background-position:right 12px center;background-size:20px;
+      padding-right:40px;cursor:pointer;
+    }
+    .mform-group textarea{resize:vertical;min-height:90px;}
+    .field-note{font-size:11px;color:var(--text2);margin-top:5px;font-style:italic;}
+
+    /* Radio / Checkbox Group */
+    .radio-group{display:flex;gap:12px;flex-wrap:wrap;margin-top:4px;}
+    .radio-option{display:flex;align-items:center;gap:8px;padding:10px 16px;background:var(--cream);border:1.5px solid var(--border);border-radius:4px;cursor:pointer;transition:all 0.2s;flex:1;min-width:100px;}
+    .radio-option:hover{border-color:var(--green2);}
+    .radio-option input[type=radio]{accent-color:var(--green);width:16px;height:16px;flex-shrink:0;cursor:pointer;}
+    .radio-option label{font-size:13px;font-weight:500;color:var(--text);cursor:pointer;}
+    .radio-option.selected{border-color:var(--green);background:rgba(27,67,50,0.05);}
+
+    /* Section divider inside form */
+    .form-section-title{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;padding-bottom:8px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
+    .form-section-title::before{content:'';width:24px;height:2px;background:var(--gold);display:inline-block;}
+
+    /* Documents checklist */
+    .docs-checklist{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+    .doc-check{display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--cream);border:1.5px solid var(--border);border-radius:4px;transition:all 0.2s;}
+    .doc-check input[type=checkbox]{accent-color:var(--green);width:16px;height:16px;flex-shrink:0;cursor:pointer;}
+    .doc-check label{font-size:12px;font-weight:500;color:var(--text);cursor:pointer;}
+    .doc-check:has(input:checked){border-color:var(--green);background:rgba(27,67,50,0.04);}
+
+    /* Summary panel in step 3 */
+    .summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}
+    .summary-item{padding:14px 18px;background:var(--cream);border-radius:4px;border-left:3px solid var(--gold);}
+    .summary-item .s-lbl{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text2);margin-bottom:4px;}
+    .summary-item .s-val{font-size:14px;font-weight:600;color:var(--green);}
+    .summary-note{background:rgba(27,67,50,0.05);border:1px solid rgba(27,67,50,0.12);border-radius:6px;padding:16px 20px;font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:20px;}
+
+    /* Navigation Buttons */
+    .modal-nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-top:24px;border-top:1px solid var(--border);margin-top:8px;}
+    .btn-nav-prev{padding:12px 28px;background:transparent;border:1.5px solid var(--border);color:var(--text2);font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;border-radius:3px;cursor:pointer;transition:all 0.2s;}
+    .btn-nav-prev:hover{border-color:var(--green);color:var(--green);}
+    .btn-nav-next{padding:12px 32px;background:var(--green);color:var(--white);border:none;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:3px;cursor:pointer;transition:all 0.2s;}
+    .btn-nav-next:hover{background:var(--green2);transform:translateY(-1px);box-shadow:0 6px 16px rgba(27,67,50,0.25);}
+    .btn-nav-submit{padding:12px 32px;background:var(--gold);color:var(--green);border:none;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:3px;cursor:pointer;transition:all 0.2s;}
+    .btn-nav-submit:hover{background:var(--gold2);transform:translateY(-1px);}
+
+    /* Success screen */
+    .modal-success{text-align:center;padding:40px 20px;}
+    .success-icon{width:80px;height:80px;background:rgba(27,67,50,0.08);border:2px solid var(--green3);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;}
+    .success-icon svg{width:40px;height:40px;fill:var(--green);}
+    .modal-success h3{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--green);margin-bottom:12px;}
+    .modal-success p{font-size:15px;color:var(--text2);line-height:1.7;max-width:480px;margin:0 auto 28px;}
+    .success-ref{background:var(--cream);border:1px solid var(--border);border-radius:6px;padding:16px 24px;display:inline-block;margin-bottom:28px;}
+    .success-ref .ref-lbl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text2);}
+    .success-ref .ref-num{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--green);font-weight:700;}
+
+    /* Validation errors */
+    .field-error{display:none;font-size:11px;color:var(--red);margin-top:5px;font-weight:500;}
+    .mform-group.error input,.mform-group.error select,.mform-group.error textarea{border-color:var(--red);}
+    .mform-group.error .field-error{display:block;}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:900px){
+      .hero-inner,.poet-grid,.about-grid,.contact-grid,.admission-grid,.footer-grid{grid-template-columns:1fr;}
+      .hero-card{display:none;}
+      .top-bar{padding:6px 20px;}
+      .mform-row,.mform-row-3,.summary-grid,.docs-checklist{grid-template-columns:1fr;}
+    }
+    @media(max-width:640px){
+      nav{padding:0 16px;}
+      .nav-links{display:none;}
+      .s-inner{padding:0 20px;}
+      .hero-inner{padding:0 20px;}
+      .footer-inner{padding:0 20px;}
+      .form-row{grid-template-columns:1fr;}
+      .modal-body{padding:24px 20px;}
+      .modal-header{padding:24px 20px 20px;}
+      .modal-progress{padding:16px 20px;gap:4px;}
+      .prog-label{display:none;}
+      .prog-line{width:24px;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <span>📍 First Family Lane, Jacobabad, Sindh, Pakistan</span>
+  <div>
+    <span class="top-bar-urdu">شاہ لطیف پبلک سیکنڈری اسکول</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <div class="nav-logo">
+        <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+      </div>
+      <div class="nav-brand-text">
+        <h1>Shah Latif Public Secondary School</h1>
+        <p>Jacobabad, Sindh, Pakistan</p>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#values">Values</a></li>
+      <li><a href="#admissions">Admissions</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-cta" onclick="openAdmission()">Apply Now</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-geo"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">
+        <div class="est-dot"></div>
+        <span>Jacobabad's Trusted School · First Family Lane</span>
+      </div>
+      <h1 class="hero-title">Shah Latif<br/><span>Public Secondary</span><br/>School</h1>
+      <div class="hero-urdu">شاہ لطیف پبلک اسکول جیکب آباد</div>
+      <p class="hero-desc">Named in honour of the great Sufi poet and saint Shah Abdul Latif Bhittai — a school built on the values of knowledge, wisdom, character, and service to the community of Jacobabad.</p>
+      <div class="hero-stats">
+        <div class="h-stat"><div class="h-stat-num">1689</div><div class="h-stat-label">Shah Latif Born</div></div>
+        <div class="h-stat"><div class="h-stat-num">KG–10</div><div class="h-stat-label">Classes Offered</div></div>
+        <div class="h-stat"><div class="h-stat-num">100%</div><div class="h-stat-label">Dedicated</div></div>
+      </div>
+      <div class="hero-btns">
+        <button class="btn-gold" onclick="openAdmission()">Apply for Admission</button>
+        <a href="#about" class="btn-ghost">Learn More</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>📌 Quick Information</h3>
+      <div class="hero-card-item">
+        <div class="hero-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+        <div><div class="hero-card-label">Location</div><div class="hero-card-value">First Family Lane, Jacobabad</div></div>
+      </div>
+      <div class="hero-card-item">
+        <div class="hero-card-icon"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg></div>
+        <div><div class="hero-card-label">Classes</div><div class="hero-card-value">KG to Class 10 (Matric)</div></div>
+      </div>
+      <div class="hero-card-item">
+        <div class="hero-card-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg></div>
+        <div><div class="hero-card-label">Named After</div><div class="hero-card-value">Shah Abdul Latif Bhittai (1689–1752)</div></div>
+      </div>
+      <div class="hero-card-item">
+        <div class="hero-card-icon"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></div>
+        <div><div class="hero-card-label">Follow Us</div><div class="hero-card-value"><a href="https://www.facebook.com/shahlatifschooljacobabad/" target="_blank" style="color:var(--gold2);">Facebook Page →</a></div></div>
+      </div>
+      <div class="hero-card-item">
+        <div class="hero-card-icon"><svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg></div>
+        <div><div class="hero-card-label">Admissions</div><div class="hero-card-value">Open — Apply Today</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SHAH LATIF BHITTAI -->
+<section id="poet" class="section">
+  <div class="s-inner">
+    <p class="s-eyebrow reveal">Our Inspiration</p>
+    <h2 class="s-title reveal">Shah Abdul Latif <span>Bhittai</span></h2>
+    <div class="s-divider reveal"></div>
+    <div class="poet-grid reveal">
+      <div class="poet-img">
+        <div class="poet-img-inner">
+          <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v2h20v-2c0-3.3-6.7-5-10-5z"/></svg>
+          <p>Sufi Poet & Saint</p>
+        </div>
+        <div class="poet-quote">
+          <p>"Beloved's separation kills me friends,<br/>At His door, many like me, their knees bend."<br/><strong style="color:var(--gold);font-size:11px;letter-spacing:1px;">— Shah Abdul Latif Bhittai</strong></p>
+        </div>
+        <div class="poet-dob"><span class="year">1689</span><span class="lbl">Born</span></div>
+      </div>
+      <div class="poet-text">
+        <p>Our school is proudly named after <strong>Shah Abdul Latif Bhittai (1689–1752)</strong> — one of the greatest Sufi scholars and poets in the history of Sindh and all of Pakistan. He was born in Hala Haveli, near Hyderabad, and his shrine stands in Bhit Shah, Matiari.</p>
+        <p>Shah Latif is best known for his masterpiece <strong>Shah Jo Risalo</strong> — a collection of poetry that is considered the greatest work of Sindhi literature. His poetry speaks of love for God, respect for humanity, religious tolerance, and the unity of all people.</p>
+        <p>His lineage traces directly back to the Prophet Muhammad (PBUH) through Imam Zain-ul-Abideen. He received early education in Persian and Sindhi, and though largely self-educated, he became deeply versed in Arabic, the Quran, the Hadiths, and the works of Maulana Rumi.</p>
+        <p>He is referred to by scholars as a <em>"Direct Emanation of Rumi's spirituality in the Indian world."</em> His values of knowledge, tolerance, and love for humanity are the foundation upon which our school is built.</p>
+        <div class="poet-facts">
+          <div class="fact-item"><div class="fact-label">Born</div><div class="fact-value">1689, Hala Haveli, Sindh</div></div>
+          <div class="fact-item"><div class="fact-label">Passed Away</div><div class="fact-value">1752, Bhit Shah</div></div>
+          <div class="fact-item"><div class="fact-label">Greatest Work</div><div class="fact-value">Shah Jo Risalo</div></div>
+          <div class="fact-item"><div class="fact-label">Known As</div><div class="fact-value">Lakhino Latif, Bhittai</div></div>
+          <div class="fact-item"><div class="fact-label">Language</div><div class="fact-value">Sindhi Poetry & Literature</div></div>
+          <div class="fact-item"><div class="fact-label">Core Values</div><div class="fact-value">Love, Tolerance, Unity</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SCHOOL -->
+<section id="about" class="section">
+  <div class="s-inner">
+    <p class="s-eyebrow reveal">About Our School</p>
+    <h2 class="s-title reveal">Building the <span>Future</span> of Jacobabad</h2>
+    <div class="s-divider reveal"></div>
+    <div class="about-grid reveal">
+      <div class="about-text">
+        <p>Shah Latif Public Secondary School is one of Jacobabad's respected educational institutions, located on First Family Lane in the heart of the city. We are committed to providing quality education to every student who walks through our doors.</p>
+        <p>Carrying the name and spirit of Shah Abdul Latif Bhittai, we believe that education is the most powerful gift we can give our children. Like the great Sufi poet himself, we believe in the unity of knowledge, character, and spirituality.</p>
+        <p>Our school provides a nurturing environment where students from KG through to Matric (Class 10) receive academic instruction, moral guidance, and the confidence they need to succeed in life — in Jacobabad, in Sindh, and beyond.</p>
+        <div class="features-grid">
+          <div class="feature-card"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18V17l7 4 7-4v-5.82L23 9 12 3zm6 8.99L12 15l-6-3.01V9.25L12 12l6-3.01v2.99z"/></svg><span>Qualified Teachers</span></div>
+          <div class="feature-card"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>Islamic Values</span></div>
+          <div class="feature-card"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg><span>Sindhi Heritage</span></div>
+          <div class="feature-card"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg><span>Safe Environment</span></div>
+          <div class="feature-card"><svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg><span>Regular Exams</span></div>
+          <div class="feature-card"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg><span>Community Focus</span></div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="about-img">
+          <div class="about-img-inner">
+            <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+          </div>
+        </div>
+        <div class="about-badge">
+          <span class="num">181</span>
+          <span class="lbl">Facebook Followers</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="programs" class="section">
+  <div class="s-inner">
+    <p class="s-eyebrow reveal">What We Offer</p>
+    <h2 class="s-title reveal">Academic <span>Programs</span></h2>
+    <div class="s-divider reveal"></div>
+    <div class="programs-grid">
+      <div class="program-card reveal">
+        <div class="program-icon"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18V17l7 4 7-4v-5.82L23 9 12 3zm6 8.99L12 15l-6-3.01V9.25L12 12l6-3.01v2.99z"/></svg></div>
+        <h3>KG Program</h3>
+        <p>A warm and nurturing foundation for your child's learning journey — play-based, creative, and fun.</p>
+        <span class="program-grade">Age 3–5</span>
+      </div>
+      <div class="program-card reveal">
+        <div class="program-icon"><svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg></div>
+        <h3>Primary Classes</h3>
+        <p>Classes 1 to 5 — building strong foundations in Maths, Urdu, English, Science, and Sindhi.</p>
+        <span class="program-grade">Class 1–5</span>
+      </div>
+      <div class="program-card reveal">
+        <div class="program-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg></div>
+        <h3>Middle School</h3>
+        <p>Classes 6 to 8 — developing critical thinking, analytical skills, and preparing for secondary education.</p>
+        <span class="program-grade">Class 6–8</span>
+      </div>
+      <div class="program-card reveal">
+        <div class="program-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <h3>Secondary (Matric)</h3>
+        <p>Classes 9 and 10 — full Matric preparation aligned with Sindh Board of Secondary Education.</p>
+        <span class="program-grade">Class 9–10</span>
+      </div>
+      <div class="program-card reveal">
+        <div class="program-icon"><svg viewBox="0 0 24 24"><path d="M6.5 10h-2v7h2v-7zm6 0h-2v7h2v-7zm8.5 9H2v2h19v-2zm-2.5-9h-2v7h2v-7zM11.5 1L2 6v2h19V6l-9.5-5z"/></svg></div>
+        <h3>Islamic Education</h3>
+        <p>Quran recitation, Islamic studies, and moral education are integrated throughout all classes.</p>
+        <span class="program-grade">All Classes</span>
+      </div>
+      <div class="program-card reveal">
+        <div class="program-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
+        <h3>Sindhi Language</h3>
+        <p>Honouring our heritage with dedicated Sindhi language and literature classes inspired by Shah Latif himself.</p>
+        <span class="program-grade">All Classes</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section id="values" class="section">
+  <div class="s-inner">
+    <p class="s-eyebrow reveal">Our Foundation</p>
+    <h2 class="s-title reveal">Core Values Inspired by <span style="color:var(--gold);">Shah Latif</span></h2>
+    <div class="s-divider reveal"></div>
+    <div class="values-grid">
+      <div class="value-card reveal"><div class="value-num">01</div><h3>Knowledge & Wisdom</h3><p>Shah Latif was largely self-educated yet became one of the greatest scholars. We inspire our students to love learning for life.</p></div>
+      <div class="value-card reveal"><div class="value-num">02</div><h3>Religious Tolerance</h3><p>The major themes of Shah Latif's poetry include religious tolerance and humanistic values — principles we live by every day.</p></div>
+      <div class="value-card reveal"><div class="value-num">03</div><h3>Love & Unity</h3><p>Shah Latif's Risalo speaks of unity of the Almighty and love for all people. We build a community of respect and belonging.</p></div>
+      <div class="value-card reveal"><div class="value-num">04</div><h3>Sindhi Heritage</h3><p>We are proud of our Sindhi roots. Our school celebrates and preserves the language, poetry, and culture of Sindh.</p></div>
+      <div class="value-card reveal"><div class="value-num">05</div><h3>Character Building</h3><p>Beyond academics, we shape honest, responsible, and compassionate human beings who contribute positively to society.</p></div>
+      <div class="value-card reveal"><div class="value-num">06</div><h3>Community Service</h3><p>Like Shah Latif who walked among ordinary people, we teach our students to serve their families and communities with humility.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ADMISSIONS -->
+<section id="admissions" class="section">
+  <div class="s-inner">
+    <p class="s-eyebrow reveal">Join Our School</p>
+    <h2 class="s-title reveal">Admissions <span>Open</span></h2>
+    <div class="s-divider reveal"></div>
+    <div class="admission-grid reveal">
+      <div class="admission-text">
+        <p>We welcome all students from Jacobabad and surrounding areas to apply for admission at Shah Latif Public Secondary School. Our admissions process is simple and straightforward.</p>
+        <p>We believe every child deserves access to quality education. Our fees are kept affordable to ensure that families across Jacobabad can benefit from our school.</p>
+        <div class="steps-list">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div><div class="step-title">Fill the Admission Form</div><div class="step-desc">Click the button below to open the full online admission form and fill in all details.</div></div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div><div class="step-title">Submit Documents</div><div class="step-desc">Bring your child's previous school report card, B-Form (NADRA), and two passport photos.</div></div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div><div class="step-title">Entrance Assessment</div><div class="step-desc">A simple assessment is conducted to place the student in the appropriate class level.</div></div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">4</div>
+            <div><div class="step-title">Confirm Admission</div><div class="step-desc">Pay the admission fee and collect the uniform and book list. Your child is now part of our family!</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="admission-form">
+        <h3>Quick Enquiry</h3>
+        <p class="form-subtitle">For the full admission form with complete student details, click below.</p>
+        <div class="form-row">
+          <div class="form-group"><label>Parent Name</label><input type="text" id="q-parent" placeholder="Full name"/></div>
+          <div class="form-group"><label>Student Name</label><input type="text" id="q-student" placeholder="Child's name"/></div>
+        </div>
+        <div class="form-group"><label>Phone Number</label><input type="tel" id="q-phone" placeholder="+92 300 ..."/></div>
+        <div class="form-group">
+          <label>Class Applying For</label>
+          <select id="q-class">
+            <option>KG</option><option>Class 1</option><option>Class 2</option>
+            <option>Class 3</option><option>Class 4</option><option>Class 5</option>
+            <option>Class 6</option><option>Class 7</option><option>Class 8</option>
+            <option>Class 9</option><option>Class 10 (Matric)</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Message / Questions</label><textarea rows="3" id="q-msg" placeholder="Any questions or special requirements..."></textarea></div>
+        <button class="btn-submit" onclick="submitEnquiry()">Submit Quick Enquiry</button>
+        <button class="btn-full-form" onclick="openAdmission()">📋 Open Full Admission Form</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="s-inner">
+    <p class="s-eyebrow reveal">Find Us</p>
+    <h2 class="s-title reveal">Location <span>& Contact</span></h2>
+    <div class="s-divider reveal"></div>
+    <div class="contact-grid reveal">
+      <div class="contact-map">
+        <div class="map-inner">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <p>First Family Lane, Jacobabad</p>
+          <a href="https://maps.google.com/?q=Shah+Latif+Public+Secondary+School+Jacobabad" target="_blank">Open in Google Maps →</a>
+        </div>
+        <div class="map-pin">📍 First Family Lane, Jacobabad</div>
+      </div>
+      <div class="contact-details">
+        <h3>Get In Touch</h3>
+        <p>We would love to hear from you. Visit us in person, message us on Facebook, or send an enquiry through our form above.</p>
+        <div class="contact-item">
+          <div class="contact-ic"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+          <div><div class="contact-lbl">Address</div><div class="contact-val">First Family Lane, Jacobabad, Sindh, Pakistan</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-ic"><svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.27h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"/></svg></div>
+          <div><div class="contact-lbl">Facebook</div><div class="contact-val"><a href="https://www.facebook.com/shahlatifschooljacobabad/" target="_blank">Shah Latif Public Secondary School</a></div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-ic"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
+          <div><div class="contact-lbl">City</div><div class="contact-val">Jacobabad, Sindh, Pakistan</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-ic"><svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg></div>
+          <div><div class="contact-lbl">Admissions</div><div class="contact-val">Open — Visit us or enquire online</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Shah Latif Public Secondary School</h3>
+        <div class="urdu">شاہ لطیف پبلک سیکنڈری اسکول جیکب آباد</div>
+        <p>Named in honour of Shah Abdul Latif Bhittai — Sufi poet, scholar, and the pride of Sindh (1689–1752). Building educated, moral, and proud Sindhi citizens in Jacobabad since our founding.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#poet">Shah Latif Bhittai</a></li>
+          <li><a href="#about">About School</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#values">Our Values</a></li>
+          <li><a href="#admissions">Admissions</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">First Family Lane</a></li>
+          <li><a href="#">Jacobabad, Sindh</a></li>
+          <li><a href="#">Pakistan</a></li>
+          <li><a href="https://www.facebook.com/shahlatifschooljacobabad/" target="_blank">Facebook Page</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Shah Latif Public Secondary School, Jacobabad. All rights reserved.</div>
+      <div class="footer-copy" style="font-family:'Noto Nastaliq Urdu',serif;font-size:13px;color:rgba(255,255,255,0.4);">علم نور ہے</div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════════════
+     FULL ADMISSION FORM MODAL
+══════════════════════════════════════════ -->
+<div class="modal-overlay" id="admissionModal">
+  <div class="modal-box">
+
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <div class="modal-header-top">
+        <div class="modal-school-name">
+          <div class="modal-logo">
+            <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+          </div>
+          <div>
+            <h2>Shah Latif Public Secondary School</h2>
+            <p>Jacobabad, Sindh, Pakistan</p>
+          </div>
+        </div>
+        <button class="modal-close" onclick="closeAdmission()">✕</button>
+      </div>
+      <div class="modal-title-row">
+        <h3>Admission Form</h3>
+        <div class="modal-urdu">فارم داخلہ</div>
+      </div>
+      <div class="modal-badge">
+        <span>🎓 Academic Year 2025–2026 · Admissions Open</span>
+      </div>
+    </div>
+
+    <!-- Progress Steps -->
+    <div class="modal-progress">
+      <div class="prog-step">
+        <div class="prog-dot active" id="prog1">1</div>
+        <span class="prog-label active" id="plbl1">Student Info</span>
+      </div>
+      <div class="prog-line" id="pline1"></div>
+      <div class="prog-step">
+        <div class="prog-dot" id="prog2">2</div>
+        <span class="prog-label" id="plbl2">Family Details</span>
+      </div>
+      <div class="prog-line" id="pline2"></div>
+      <div class="prog-step">
+        <div class="prog-dot" id="prog3">3</div>
+        <span class="prog-label" id="plbl3">Academic Info</span>
+      </div>
+      <div class="prog-line" id="pline3"></div>
+      <div class="prog-step">
+        <div class="prog-dot" id="prog4">4</div>
+        <span class="prog-label" id="plbl4">Review & Submit</span>
+      </div>
+    </div>
+
+    <!-- Modal Body -->
+    <div class="modal-body">
+
+      <!-- ── STEP 1: Student Information ── -->
+      <div class="form-step active" id="step1">
+        <div class="step-heading">
+          <h4>Student Information</h4>
+          <p>Please fill in the student's personal details accurately as per official documents.</p>
+        </div>
+
+        <div class="form-section-title">Personal Details</div>
+        <div class="mform-row">
+          <div class="mform-group" id="fg-sname">
+            <label>Student Full Name <span class="req">*</span></label>
+            <input type="text" id="f-sname" placeholder="e.g. Ali Hassan Soomro"/>
+            <div class="field-error">Please enter the student's full name.</div>
+          </div>
+          <div class="mform-group" id="fg-sname-urdu">
+            <label>Name in Urdu / Sindhi</label>
+            <input type="text" id="f-sname-urdu" placeholder="اردو یا سندھی میں نام" style="direction:rtl;font-family:'Noto Nastaliq Urdu',serif;"/>
+          </div>
+        </div>
+
+        <div class="mform-row">
+          <div class="mform-group" id="fg-dob">
+            <label>Date of Birth <span class="req">*</span></label>
+            <input type="date" id="f-dob"/>
+            <div class="field-error">Please enter the student's date of birth.</div>
+          </div>
+          <div class="mform-group">
+            <label>Gender <span class="req">*</span></label>
+            <div class="radio-group">
+              <div class="radio-option" onclick="selectRadio(this,'gender','Male')">
+                <input type="radio" name="gender" value="Male" id="gm"/> <label for="gm">Male</label>
+              </div>
+              <div class="radio-option" onclick="selectRadio(this,'gender','Female')">
+                <input type="radio" name="gender" value="Female" id="gf"/> <label for="gf">Female</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mform-row">
+          <div class="mform-group" id="fg-bform">
+            <label>B-Form / CNIC Number <span class="req">*</span></label>
+            <input type="text" id="f-bform" placeholder="e.g. 45201-XXXXXXX-X" maxlength="15"/>
+            <div class="field-note">13-digit number from NADRA B-Form</div>
+            <div class="field-error">Please enter a valid B-Form number.</div>
+          </div>
+          <div class="mform-group">
+            <label>Religion</label>
+            <select id="f-religion">
+              <option value="">Select Religion</option>
+              <option>Islam</option>
+              <option>Hindu</option>
+              <option>Christian</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mform-row">
+          <div class="mform-group">
+            <label>Caste / Biradari</label>
+            <input type="text" id="f-caste" placeholder="e.g. Soomro, Bhutto, Talpur, etc."/>
+          </div>
+          <div class="mform-group">
+            <label>Nationality</label>
+            <input type="text" id="f-nationality" value="Pakistani" placeholder="Pakistani"/>
+          </div>
+        </div>
+
+        <div class="mform-group">
+          <label>Permanent Home Address <span class="req">*</span></label>
+          <input type="text" id="f-address" placeholder="Street / Mohalla, Jacobabad or nearby area"/>
+        </div>
+
+        <div class="modal-nav">
+          <span></span>
+          <button class="btn-nav-next" onclick="nextStep(1)">Next: Family Details →</button>
+        </div>
+      </div>
+
+      <!-- ── STEP 2: Family Details ── -->
+      <div class="form-step" id="step2">
+        <div class="step-heading">
+          <h4>Family Details</h4>
+          <p>Information about the student's parents and guardian for our school records.</p>
+        </div>
+
+        <div class="form-section-title">Father's Information</div>
+        <div class="mform-row">
+          <div class="mform-group" id="fg-fname">
+            <label>Father's Full Name <span class="req">*</span></label>
+            <input type="text" id="f-fname" placeholder="e.g. Hassan Ali Soomro"/>
+            <div class="field-error">Please enter the father's name.</div>
+          </div>
+          <div class="mform-group">
+            <label>Father's CNIC</label>
+            <input type="text" id="f-fcnic" placeholder="XXXXX-XXXXXXX-X" maxlength="15"/>
+          </div>
+        </div>
+        <div class="mform-row">
+          <div class="mform-group" id="fg-fphone">
+            <label>Father's Mobile Number <span class="req">*</span></label>
+            <input type="tel" id="f-fphone" placeholder="+92 300 0000000"/>
+            <div class="field-error">Please enter a contact number.</div>
+          </div>
+          <div class="mform-group">
+            <label>Father's Occupation</label>
+            <select id="f-focc">
+              <option value="">Select Occupation</option>
+              <option>Farmer / Agriculture</option>
+              <option>Government Employee</option>
+              <option>Private Job</option>
+              <option>Business / Self-Employed</option>
+              <option>Teacher</option>
+              <option>Doctor / Healthcare</option>
+              <option>Laborer / Daily Wage</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-section-title" style="margin-top:8px;">Mother's Information</div>
+        <div class="mform-row">
+          <div class="mform-group" id="fg-mname">
+            <label>Mother's Full Name <span class="req">*</span></label>
+            <input type="text" id="f-mname" placeholder="e.g. Fatima Hassan"/>
+            <div class="field-error">Please enter the mother's name.</div>
+          </div>
+          <div class="mform-group">
+            <label>Mother's Mobile Number</label>
+            <input type="tel" id="f-mphone" placeholder="+92 300 0000000"/>
+          </div>
+        </div>
+
+        <div class="form-section-title" style="margin-top:8px;">Guardian (if different from parents)</div>
+        <div class="mform-row">
+          <div class="mform-group">
+            <label>Guardian Name</label>
+            <input type="text" id="f-gname" placeholder="Leave blank if same as father"/>
+          </div>
+          <div class="mform-group">
+            <label>Relation to Student</label>
+            <select id="f-grel">
+              <option value="">N/A</option>
+              <option>Uncle</option>
+              <option>Grandfather</option>
+              <option>Elder Brother</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mform-group">
+          <label>Monthly Family Income</label>
+          <select id="f-income">
+            <option value="">Prefer not to say</option>
+            <option>Below Rs. 15,000</option>
+            <option>Rs. 15,000 – 30,000</option>
+            <option>Rs. 30,000 – 50,000</option>
+            <option>Rs. 50,000 – 1,00,000</option>
+            <option>Above Rs. 1,00,000</option>
+          </select>
+          <div class="field-note">This helps us offer fee concessions where needed.</div>
+        </div>
+
+        <div class="modal-nav">
+          <button class="btn-nav-prev" onclick="prevStep(2)">← Back</button>
+          <button class="btn-nav-next" onclick="nextStep(2)">Next: Academic Info →</button>
+        </div>
+      </div>
+
+      <!-- ── STEP 3: Academic Information ── -->
+      <div class="form-step" id="step3">
+        <div class="step-heading">
+          <h4>Academic Information</h4>
+          <p>Details about the class being applied for and previous school history.</p>
+        </div>
+
+        <div class="form-section-title">Class & Admission</div>
+        <div class="mform-row">
+          <div class="mform-group" id="fg-class">
+            <label>Class Applying For <span class="req">*</span></label>
+            <select id="f-class">
+              <option value="">Select Class</option>
+              <option>KG (Kindergarten)</option>
+              <option>Class 1</option>
+              <option>Class 2</option>
+              <option>Class 3</option>
+              <option>Class 4</option>
+              <option>Class 5</option>
+              <option>Class 6</option>
+              <option>Class 7</option>
+              <option>Class 8</option>
+              <option>Class 9 (Science)</option>
+              <option>Class 9 (Arts)</option>
+              <option>Class 10 / Matric (Science)</option>
+              <option>Class 10 / Matric (Arts)</option>
+            </select>
+            <div class="field-error">Please select the class being applied for.</div>
+          </div>
+          <div class="mform-group">
+            <label>Section Preference</label>
+            <div class="radio-group">
+              <div class="radio-option" onclick="selectRadio(this,'section','A')">
+                <input type="radio" name="section" value="A" id="sa"/> <label for="sa">Section A</label>
+              </div>
+              <div class="radio-option" onclick="selectRadio(this,'section','B')">
+                <input type="radio" name="section" value="B" id="sb"/> <label for="sb">Section B</label>
+              </div>
+              <div class="radio-option" onclick="selectRadio(this,'section','Any')">
+                <input type="radio" name="section" value="Any" id="sc" checked/> <label for="sc">Any</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mform-row">
+          <div class="mform-group">
+            <label>Medium of Instruction</label>
+            <div class="radio-group">
+              <div class="radio-option" onclick="selectRadio(this,'medium','Urdu')">
+                <input type="radio" name="medium" value="Urdu" id="mu"/> <label for="mu">Urdu</label>
+              </div>
+              <div class="radio-option" onclick="selectRadio(this,'medium','English')">
+                <input type="radio" name="medium" value="English" id="me"/> <label for="me">English</label>
+              </div>
+              <div class="radio-option" onclick="selectRadio(this,'medium','Sindhi')">
+                <input type="radio" name="medium" value="Sindhi" id="ms"/> <label for="ms">Sindhi</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section-title" style="margin-top:8px;">Previous School</div>
+        <div class="mform-row">
+          <div class="mform-group">
+            <label>Previous School Name</label>
+            <input type="text" id="f-prevsch" placeholder="Name of last school attended"/>
+          </div>
+          <div class="mform-group">
+            <label>Last Class Passed</label>
+            <select id="f-lastclass">
+              <option value="">New Student / None</option>
+              <option>KG</option>
+              <option>Class 1</option><option>Class 2</option><option>Class 3</option>
+              <option>Class 4</option><option>Class 5</option><option>Class 6</option>
+              <option>Class 7</option><option>Class 8</option><option>Class 9</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mform-row">
+          <div class="mform-group">
+            <label>Last Year's Marks / Grade</label>
+            <input type="text" id="f-marks" placeholder="e.g. 78% or A Grade"/>
+          </div>
+          <div class="mform-group">
+            <label>Reason for School Change</label>
+            <select id="f-reason">
+              <option value="">N/A / New Student</option>
+              <option>Moved to Jacobabad</option>
+              <option>Better Education</option>
+              <option>Fees / Affordability</option>
+              <option>School Closed</option>
+              <option>Family Preference</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-section-title" style="margin-top:8px;">Documents Available</div>
+        <div class="docs-checklist">
+          <div class="doc-check"><input type="checkbox" id="doc1"/><label for="doc1">B-Form (NADRA)</label></div>
+          <div class="doc-check"><input type="checkbox" id="doc2"/><label for="doc2">Previous School Report Card</label></div>
+          <div class="doc-check"><input type="checkbox" id="doc3"/><label for="doc3">Passport Size Photos (x2)</label></div>
+          <div class="doc-check"><input type="checkbox" id="doc4"/><label for="doc4">Father's CNIC Copy</label></div>
+          <div class="doc-check"><input type="checkbox" id="doc5"/><label for="doc5">School Leaving Certificate</label></div>
+          <div class="doc-check"><input type="checkbox" id="doc6"/><label for="doc6">Character Certificate</label></div>
+        </div>
+        <div class="field-note" style="margin-top:10px;">Don't worry if you don't have everything yet — bring what you can when visiting the school.</div>
+
+        <div class="mform-group" style="margin-top:20px;">
+          <label>Special Notes / Requests</label>
+          <textarea id="f-notes" placeholder="Any health conditions, special needs, or questions you'd like us to know about..."></textarea>
+        </div>
+
+        <div class="modal-nav">
+          <button class="btn-nav-prev" onclick="prevStep(3)">← Back</button>
+          <button class="btn-nav-next" onclick="nextStep(3)">Review Application →</button>
+        </div>
+      </div>
+
+      <!-- ── STEP 4: Review & Submit ── -->
+      <div class="form-step" id="step4">
+        <div class="step-heading">
+          <h4>Review & Submit</h4>
+          <p>Please review your information before submitting your admission application.</p>
+        </div>
+
+        <div class="summary-note">
+          📋 Please verify all details below. Once submitted, you will receive a confirmation with a reference number. Our school staff will contact you within <strong>2–3 working days</strong> to schedule the entrance assessment.
+        </div>
+
+        <div class="form-section-title">Student Summary</div>
+        <div class="summary-grid" id="summary-panel">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="form-section-title" style="margin-top:8px;">Declaration</div>
+        <div class="mform-group">
+          <div class="doc-check">
+            <input type="checkbox" id="decl1"/>
+            <label for="decl1">I confirm all details provided are correct and genuine.</label>
+          </div>
+        </div>
+        <div class="mform-group">
+          <div class="doc-check">
+            <input type="checkbox" id="decl2"/>
+            <label for="decl2">I agree to abide by the rules and regulations of Shah Latif Public Secondary School.</label>
+          </div>
+        </div>
+
+        <div class="modal-nav">
+          <button class="btn-nav-prev" onclick="prevStep(4)">← Back</button>
+          <button class="btn-nav-submit" onclick="submitForm()">✓ Submit Application</button>
+        </div>
+      </div>
+
+      <!-- ── SUCCESS ── -->
+      <div class="form-step" id="stepSuccess">
+        <div class="modal-success">
+          <div class="success-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          </div>
+          <h3>Application Submitted!</h3>
+          <p>Thank you for applying to Shah Latif Public Secondary School. Your admission application has been received. Our team will review your details and contact you within <strong>2–3 working days</strong>.</p>
+          <div class="success-ref">
+            <div class="ref-lbl">Your Reference Number</div>
+            <div class="ref-num" id="refNum">SL-2025-0001</div>
+          </div>
+          <p style="font-size:13px;">Please save this reference number. You may also visit us directly at <strong>First Family Lane, Jacobabad</strong> or message us on Facebook.</p>
+          <br/>
+          <button class="btn-gold" onclick="closeAdmission()">Close</button>
+        </div>
+      </div>
+
+    </div><!-- /modal-body -->
+  </div><!-- /modal-box -->
+</div><!-- /modal-overlay -->
+
+
+<script>
+  // ── Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+
+  // ── Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => obs.observe(r));
+
+  // ── Quick enquiry
+  function submitEnquiry() {
+    const parent = document.getElementById('q-parent').value.trim();
+    const phone = document.getElementById('q-phone').value.trim();
+    if (!parent || !phone) { alert('Please enter your name and phone number.'); return; }
+    alert('Thank you, ' + parent + '! Your enquiry has been received. We will contact you at ' + phone + '.\n\nShah Latif Public Secondary School, Jacobabad.');
+  }
+
+  // ── Modal open/close
+  function openAdmission() {
+    document.getElementById('admissionModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    goToStep(1);
+  }
+  function closeAdmission() {
+    document.getElementById('admissionModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('admissionModal').addEventListener('click', function(e) {
+    if (e.target === this) closeAdmission();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeAdmission();
+  });
+
+  // ── Step navigation
+  let currentStep = 1;
+  function goToStep(n) {
+    for (let i = 1; i <= 4; i++) {
+      const step = document.getElementById('step' + i);
+      const success = document.getElementById('stepSuccess');
+      if (step) step.classList.remove('active');
+      if (success) success.classList.remove('active');
+    }
+    const target = document.getElementById('step' + n);
+    if (target) { target.classList.add('active'); currentStep = n; }
+    updateProgress(n);
+    document.querySelector('.modal-box').scrollTop = 0;
+  }
+
+  function updateProgress(n) {
+    for (let i = 1; i <= 4; i++) {
+      const dot = document.getElementById('prog' + i);
+      const lbl = document.getElementById('plbl' + i);
+      const line = document.getElementById('pline' + i);
+      dot.classList.remove('active','done');
+      lbl.classList.remove('active');
+      if (line) line.classList.remove('done');
+      if (i < n) { dot.classList.add('done'); dot.innerHTML = '✓'; if (line) line.classList.add('done'); }
+      else if (i === n) { dot.classList.add('active'); dot.innerHTML = i; lbl.classList.add('active'); }
+      else { dot.innerHTML = i; }
+    }
+  }
+
+  function nextStep(from) {
+    if (!validateStep(from)) return;
+    if (from === 3) buildSummary();
+    goToStep(from + 1);
+  }
+  function prevStep(from) { goToStep(from - 1); }
+
+  // ── Validation
+  function validateStep(step) {
+    let valid = true;
+    const clearErr = (id) => { const g = document.getElementById('fg-' + id); if (g) g.classList.remove('error'); };
+    const setErr = (id) => { const g = document.getElementById('fg-' + id); if (g) { g.classList.add('error'); valid = false; } };
+    const val = (id) => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
+
+    if (step === 1) {
+      clearErr('sname'); clearErr('dob'); clearErr('bform');
+      if (!val('f-sname')) setErr('sname');
+      if (!val('f-dob')) setErr('dob');
+      if (!val('f-bform')) setErr('bform');
+      if (!val('f-address')) { valid = false; alert('Please enter the student\'s home address.'); }
+    }
+    if (step === 2) {
+      clearErr('fname'); clearErr('fphone'); clearErr('mname');
+      if (!val('f-fname')) setErr('fname');
+      if (!val('f-fphone')) setErr('fphone');
+      if (!val('f-mname')) setErr('mname');
+    }
+    if (step === 3) {
+      clearErr('class');
+      if (!val('f-class')) { setErr('class'); }
+    }
+    if (!valid) {
+      const firstErr = document.querySelector('.mform-group.error input, .mform-group.error select');
+      if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    return valid;
+  }
+
+  // ── Build summary for step 4
+  function buildSummary() {
+    const g = (id) => { const el = document.getElementById(id); return el ? el.value.trim() : '—'; };
+    const gn = (name) => { const el = document.querySelector('input[name="' + name + '"]:checked'); return el ? el.value : '—'; };
+    const items = [
+      { l: 'Student Name', v: g('f-sname') },
+      { l: 'Date of Birth', v: g('f-dob') },
+      { l: 'Gender', v: gn('gender') },
+      { l: 'Caste', v: g('f-caste') || '—' },
+      { l: 'B-Form No.', v: g('f-bform') },
+      { l: 'Father\'s Name', v: g('f-fname') },
+      { l: 'Mother\'s Name', v: g('f-mname') },
+      { l: 'Contact Number', v: g('f-fphone') },
+      { l: 'Class Applied', v: g('f-class') },
+      { l: 'Previous School', v: g('f-prevsch') || 'None / New Student' },
+      { l: 'Address', v: g('f-address') },
+      { l: 'Occupation', v: g('f-focc') || '—' },
+    ];
+    document.getElementById('summary-panel').innerHTML = items.map(item =>
+      `<div class="summary-item"><div class="s-lbl">${item.l}</div><div class="s-val">${item.v || '—'}</div></div>`
+    ).join('');
+  }
+
+  // ── Final submit
+  function submitForm() {
+    const d1 = document.getElementById('decl1').checked;
+    const d2 = document.getElementById('decl2').checked;
+    if (!d1 || !d2) { alert('Please agree to both declarations before submitting.'); return; }
+    const refNum = 'SL-2025-' + String(Math.floor(1000 + Math.random() * 9000));
+    document.getElementById('refNum').textContent = refNum;
+    // Hide all steps
+    for (let i = 1; i <= 4; i++) {
+      const s = document.getElementById('step' + i); if (s) s.classList.remove('active');
+    }
+    document.getElementById('stepSuccess').classList.add('active');
+    // Update progress to all done
+    for (let i = 1; i <= 4; i++) {
+      const dot = document.getElementById('prog' + i);
+      dot.classList.add('done'); dot.innerHTML = '✓';
+      const line = document.getElementById('pline' + i); if (line) line.classList.add('done');
+    }
+  }
+
+  // ── Radio selector helper
+  function selectRadio(el, name, val) {
+    document.querySelectorAll('input[name="' + name + '"]').forEach(r => {
+      r.closest('.radio-option').classList.remove('selected');
+    });
+    el.classList.add('selected');
+    const radio = el.querySelector('input[type=radio]');
+    if (radio) radio.checked = true;
+  }
+</script>
+</body>
+</html>
